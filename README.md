@@ -1,12 +1,12 @@
-## Welcome to GitHub Pages
+# Pentest Tips
 
-You can use the [editor on GitHub](https://github.com/aasphixie/aasphixie.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Some tips from a cybersecurity consultant @Wavestone.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Pentest Active Directory
 
-### Pentest Active Directory
+### CrackMapExec :
 
-CrackMapExec :
+Dump all shares :
 
 ```markdown
 cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
