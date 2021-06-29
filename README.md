@@ -30,6 +30,11 @@ Dump all shares via CrackMapExec. Can be used on Windows/Linux and via python :
 cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
 ```
 
+This command create a directory cme_spider_plus in /tmp (for Linux). To retrive passwords, simply use grep, by using keywords like 'password', 'pass', 'username', 'ldap://', etc ..
+```markdown
+grep -rnw ./ -e ‘password’
+```
+
 If CME is detected by AV/EDR, use PowerShell one-liner PowerView :
 
 ```markdown
