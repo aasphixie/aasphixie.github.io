@@ -24,7 +24,7 @@ Then execute BloodHound.exe and import the zip file.
 
 ### Shares :
 
-Dump all shares via CrackMapExec :
+Dump all shares via CrackMapExec. Can be used on Windows/Linux and via python :
 
 ```markdown
 cme smb -u 'XXX' -p 'XXX' -M spider_plus IP_ADDRESS/MASK
