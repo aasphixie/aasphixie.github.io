@@ -139,17 +139,6 @@ Use Hydra :
 hydra -l USERNAME -P FILE_CONTAINING_PASSWORDS -M FILE_CONTAINING_IP_TO_BRUTEFORCE -t 4 ssh
 ```
 
-
-
-## Port Forwarding
-
-Pour accéder à un service exposé en local sur une machine distante :
-
-```markdown
-ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
-```
-
-
 ## Tips
 
 ### SSH
@@ -162,4 +151,12 @@ ssh-keygen -t rsa
 Paste it to authorized_keys :
 ```markdown
 echo XXXX >> ~/.ssh/authorized_keys
+```
+
+### Port Forwarding
+
+Pour accéder à un service exposé en local sur une machine distante :
+
+```markdown
+ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
 ```
