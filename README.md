@@ -160,3 +160,13 @@ Pour accéder à un service exposé en local sur une machine distante :
 ```markdown
 ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
 ```
+
+## Privesc
+
+### Linux
+CVE-2021-4034
+```markdown
+https://github.com/berdav/CVE-2021-4034
+```
+
+### Windows
