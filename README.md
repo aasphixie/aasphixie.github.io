@@ -175,6 +175,11 @@ CVE-2021-4034 : Polkit privilege escalation exploit
 https://raw.githubusercontent.com/joeammond/CVE-2021-4034/main/CVE-2021-4034.py
 ```
 
+CVE-2021-3156 : Sudo Baron Samedit exploit
+```markdown
+https://github.com/redhawkeye/sudo-exploit
+```
+
 ### Web
 Read PHP Code with PHP Filter :
 ```markdown
