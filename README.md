@@ -1,6 +1,6 @@
 # Pentest Tips
 
-Some tips from a cybersecurity consultant in France.
+Some tips from a cybersecurity auditor & consultant in France.
 
 ## Pentest Active Directory
 
@@ -155,7 +155,7 @@ echo XXXX >> ~/.ssh/authorized_keys
 
 ### Port Forwarding
 
-Pour accéder à un service exposé en local sur une machine distante :
+To access a locally exposed service on a remote machine :
 
 ```markdown
 ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
