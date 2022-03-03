@@ -70,8 +70,7 @@ CrackMapExec : Use the Mimikatz module
 cme smb IP_ADDRESS -u 'Administrator' -p 'PASS' -M lsassy
 ```
 
-Savoir
-CrackMapExec : Use the Mimikatz module
+Savoir : Mimikatz recompiled in Go lang
 ```markdown
 https://github.com/vincd/savoir
 ```
