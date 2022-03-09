@@ -197,6 +197,11 @@ To access a locally exposed service on a remote machine :
 ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
 ```
 
+### Get a proper shell
+```markdown
+python -c 'import pty; pty.spawn("/bin/sh")'
+```
+
 ## Privesc
 
 ### Linux
