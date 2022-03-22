@@ -221,6 +221,10 @@ CVE-2021-3156 : Sudo Baron Samedit exploit
 ```markdown
 https://github.com/redhawkeye/sudo-exploit
 ```
+Adding SUID to bash if you can control a binary/script launched by root :
+```markdown
+chmod +s /bin/bash
+```
 
 ### Web
 Read PHP Code with PHP Filter :
