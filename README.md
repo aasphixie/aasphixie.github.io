@@ -206,7 +206,7 @@ ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
 
 ### Get a proper shell
 ```markdown
-python -c 'import pty; pty.spawn("/bin/sh")'
+python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
 
 ## Privesc
