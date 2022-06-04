@@ -1,4 +1,4 @@
-## Pentest Active Directory
+## Active Directory
 
 ### AD Mapping
 
