@@ -1,4 +1,5 @@
 ---
+title: Pentest Tips
 nav_order: 1
 ---
 # Pentest Tips
