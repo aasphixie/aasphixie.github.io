@@ -1,3 +1,6 @@
 remote_theme: just-the-docs/just-the-docs
 color_scheme: "dark"
 title: Pentest Tips
+search_enabled: true
+search:
+  heading_level: 2
