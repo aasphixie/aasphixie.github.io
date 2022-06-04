@@ -69,7 +69,7 @@ pypykatz lsa minidump 'XXX.DMP'
 ```
 ### Others
 Native Windows command :
-```cmd
+```markdown
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
 Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
