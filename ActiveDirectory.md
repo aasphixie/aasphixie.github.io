@@ -18,16 +18,14 @@ The tool give you a zip file, that you have to send to a Neo4j database. On Linu
 ```bash
 sudo neo4j start
 ```
-
 Then execute BloodHound and import the zip file.
-
 
 ## Shares :
 
-Dump all shares via CrackMapExec. Can be used on Windows/Linux and via python :
+Dump all shares via CrackMapExec. This can be used on native Kali distribution :
 
-```markdown
-cme smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=false
+```bash
+crackmapexec smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=false
 ```
 
 This command create a directory cme_spider_plus in /tmp (for Linux). To retrive passwords, simply use grep, by using keywords like 'password', 'pass', 'username', 'ldap://', etc ..
