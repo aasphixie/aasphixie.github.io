@@ -1,3 +1,9 @@
+---
+layout: default
+title: Windows
+parent: Pentest Tips
+nav_order: 3
+---
 ## Windows
 
 ### CVE-2020-1472 : Zero Logon
