@@ -1,8 +1,8 @@
 ---
-layout: default
-title: UI Components
-nav_order: 2
-has_children: true
+title: Pentest Tips
+nav_order: 1
 ---
+# Pentest Tips
 
-test
+Some tips from a cybersecurity auditor & consultant in France.
+
