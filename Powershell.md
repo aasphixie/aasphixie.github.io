@@ -1,4 +1,4 @@
-# PowerShell one-liners
+# PowerShell 0ne-Liners
 
 Bloodhound : Using ingestors to collect the data and then send it to BloodHound.
 
