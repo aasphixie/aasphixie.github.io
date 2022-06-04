@@ -1,7 +1,5 @@
 ---
-layout: default
 title: Active Directory
-parent: Pentest Tips
 nav_order: 2
 ---
 ## Active Directory
