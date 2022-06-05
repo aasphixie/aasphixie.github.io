@@ -17,7 +17,7 @@ Then, put the file on the target machine.
 ## Port Forwarding
 To access a locally exposed service on a remote machine :
 ```bash
-ssh -L YOUR_PORT:localhost:PORT_EXPOSED user@IP
+ssh -L YOUR_PORT:localhost:PORT_EXPOSED USERNAME@IP_ADDRESS
 ```
 ## Get a proper shell on RCE
 ```bash
