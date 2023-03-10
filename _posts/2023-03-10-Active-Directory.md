@@ -264,25 +264,3 @@ With CrackMapExec, use the -k and --use-kcache options to use a kerberos authent
 crackmapexec smb IP_ADDRESS/MASK -u 'USERNAME' -k --use-kcache
 ```
 {: .nolineno }
-
-## Active Directory Certificate Services (ADCS)
-
-You can try to find directly vulnerable templates with certipy. Good to use /currentuser option if you only have one valid account :
-
-```bash
-certipy find -vulnerable -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
-```
-{: .nolineno }
-
-If it doesn't work, you probably have to do it on a domain-joined machine, using Windows.
-You can get the compiled tools here : https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
-
-Same thing can be done with Certify.exe :
-
-```powershell
-./Certify.exe find /vulnerable /domain:DOMAIN
-```
-{: .nolineno }
-
----
-## Misconfigured Certificate Template
