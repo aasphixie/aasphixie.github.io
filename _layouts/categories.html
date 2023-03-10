@@ -41,7 +41,7 @@ layout: page
         <a href="{{ _category_url | relative_url }}" class="ml-1 mr-2">{{ category_name }}</a>
 
         <!-- content count -->
-        {% assign top_posts_size = site.categories[category_name] | size %}
+       <!-- {% assign top_posts_size = site.categories[category_name] | size %}
         <span class="text-muted small font-weight-light">
           {% if sub_categories_size > 0 %}
             {{ sub_categories_size }}
@@ -62,7 +62,7 @@ layout: page
           {% else %}
             {{ site.data.locales[site.lang].categories.post_measure.singular
               | default: site.data.locales[site.lang].categories.post_measure }}
-          {% endif %}
+          {% endif %}-->
         </span>
       </span>
 
