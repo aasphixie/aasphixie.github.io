@@ -6,8 +6,6 @@ categories: [Active Directory, Kerberos]
 pin: true
 ---
 
-# Active Directory
-
 ## Mapping & Enumeration
 
 ### Bloodhound
