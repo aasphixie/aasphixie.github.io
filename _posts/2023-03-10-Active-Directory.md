@@ -186,6 +186,3 @@ rundll32 keymgr.dll, KRShowKeyMgr
 {: .nolineno }
 
 Savoir : Mimikatz recompiled in Go lang : <https://github.com/vincd/savoir>
-
----
-## Impersonation
