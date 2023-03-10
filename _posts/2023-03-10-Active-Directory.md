@@ -45,6 +45,7 @@ To get all the important information from the Active Directory :
 ```
 {: .nolineno }
 
+---
 ## Shares
 
 Dump all shares via CrackMapExec. This can be used on native Kali distribution :
@@ -67,6 +68,7 @@ Find-DomainShare -CheckShareAccess
 {: .nolineno }
 All the functionalities here : <https://powersploit.readthedocs.io/en/latest/Recon/>
 
+---
 ## Dump credentials
 
 ### CrackMapExec
@@ -143,6 +145,7 @@ rundll32 keymgr.dll, KRShowKeyMgr
 {: .nolineno }
 Savoir : Mimikatz recompiled in Go lang : <https://github.com/vincd/savoir>
 
+---
 ## Impersonation
 
 To execute commands with another account :
@@ -152,6 +155,7 @@ $credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\
 Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
 ```
 
+---
 ## Kerberos
 
 ### Kerberoast
@@ -221,6 +225,7 @@ Same thing can be done with Certify.exe :
 ```
 {: .nolineno }
 
+---
 ## Misconfigured Certificate Template
 If you find a certificate template with those things, the job is almost done :
 
@@ -250,6 +255,7 @@ certipy auth -pfx cert.pfx -dc-ip DC-IP -u ACCOUNT-TO-IMPERSONATE -domain DOMAIN
 {: .nolineno }
 You then get the NTLM Hash. Enjoy ;)
 
+---
 ## NTDS Exfiltration
 
 ### Remote extraction using CrackmapExec or Impacket
