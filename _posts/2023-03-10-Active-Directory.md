@@ -1,7 +1,7 @@
 ---
-title: TITLE
-date: YYYY-MM-DD HH:MM:SS +/-TTTT
-categories: Active Directory
+title: Active Directory
+date: 2023-03-10 14:45
+categories: [Active Directory]
 ---
 
 # Active Directory
