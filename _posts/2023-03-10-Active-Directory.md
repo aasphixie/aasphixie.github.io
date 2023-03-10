@@ -229,7 +229,7 @@ impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME -no-pass
 ```
 {: .nolineno }
 
-### Tips to authenticate with Kerberos while pentesting
+### Authenticate with Kerberos
 
 If you have a valid username/password, you can ask the KDC for a TGT. It is truly important to use the real domain name and not an alias :
 
