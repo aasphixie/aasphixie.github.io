@@ -1,8 +1,8 @@
 ---
-title: Kerberos
+title: Active Directory Pentest
 author: AsPhiXie
 date: 2019-08-09 20:55:00 +0800
-categories: [Active Directory, Kerberos]
+categories: [Active Directory, Pentest Cheatsheet]
 pin: true
 ---
 
