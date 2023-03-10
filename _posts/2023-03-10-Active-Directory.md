@@ -1,8 +1,12 @@
 ---
-title: Active Directory
-date: 2023-03-10 14:45
-categories: [Active Directory]
+title: Getting Started
+author: cotes
+date: 2019-08-09 20:55:00 +0800
+categories: [Blogging, Tutorial]
+tags: [getting started]
+pin: true
 ---
+
 
 # Active Directory
 
