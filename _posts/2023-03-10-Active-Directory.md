@@ -7,18 +7,9 @@ pin: true
 comments: false
 ---
 
-This post is to show Markdown syntax rendering on [**Chirpy**](https://github.com/cotes2020/jekyll-theme-chirpy/fork), you can also use it as an example of writing. Now, let's start looking at text and typography.
+Active Directory Pentesting steps.
 
-## Titles
----
-# H1 - heading
-
-<h2 data-toc-skip>H2 - heading</h2>
-
-<h3 data-toc-skip>H3 - heading</h3>
-
-<h4>H4 - heading</h4>
----
+## Mapping & Enumeration
 
 ## Paragraph
 
