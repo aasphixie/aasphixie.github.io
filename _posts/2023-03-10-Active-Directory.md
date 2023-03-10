@@ -36,8 +36,27 @@ sudo neo4j start
 
 Then execute BloodHound and import the zip file.
 
-## Lists
+### Extended Bloodhound (PKI)
 
+Best thing to do is to use Certipy to get a bloodhound extract, including everything about ADCS (templates, etc.) :
+
+```bash
+certipy find -bloodhound -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
+```
+{: .nolineno }
+
+Then, use Olivier Lyak's bloohound, which includes PKIs stuff (<https://github.com/ly4k/BloodHound>). This will give you the opportunity to check for a lot of knows attacks on ADCS (ESC1 to ESC10).
+
+### Goddi
+
+To get all the important information from the Active Directory :
+
+```bash
+./goddi-linux-amd64 -dc IP_DC -domain=DOMAIN -username=USERNAME -password=PASSWORD -unsafe
+```
+{: .nolineno }
+
+---
 ### Ordered list
 
 1. Firstly
