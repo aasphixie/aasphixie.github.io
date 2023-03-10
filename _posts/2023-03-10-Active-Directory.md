@@ -1,5 +1,5 @@
 ---
-title: Active Directory Pentest
+title: Active Directory Pentest Steps
 author: asphixie
 date: 2023-03-10 20:55:00 +0800
 categories: [Active Directory]
