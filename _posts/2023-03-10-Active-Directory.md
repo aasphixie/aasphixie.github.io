@@ -98,7 +98,7 @@ Here is the `/path/to/the/file.extend`{: .filepath}.
 This is a common code snippet, without syntax highlight and line number.
 ```
 
-### Specific Language
+## Specific Language
 
 ```bash
 if [ $? -ne 0 ]; then
