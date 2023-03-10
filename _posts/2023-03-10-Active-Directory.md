@@ -1,7 +1,7 @@
 ---
 title: Active Directory Pentest
 author: AsPhiXie
-date: 2019-08-09 20:55:00 +0800
+date: 2023-03-10 20:55:00 +0800
 categories: [Active Directory, Pentest Cheatsheet]
 pin: true
 ---
