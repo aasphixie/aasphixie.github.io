@@ -56,7 +56,6 @@ To get all the important information from the Active Directory :
 ```
 {: .nolineno }
 
----
 ## Shares
 
 Dump all shares via CrackMapExec. This can be used on native Kali distribution :
@@ -89,7 +88,6 @@ Find-DomainShare -CheckShareAccess
 
 All the functionalities here : <https://powersploit.readthedocs.io/en/latest/Recon/>
 
----
 ## Dump credentials
 
 ### CrackMapExec
@@ -186,4 +184,4 @@ rundll32 keymgr.dll, KRShowKeyMgr
 {: .nolineno }
 
 Savoir : Mimikatz recompiled in Go lang : <https://github.com/vincd/savoir>
----
+
