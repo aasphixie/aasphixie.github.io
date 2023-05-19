@@ -1,7 +1,7 @@
 ---
 title: Powershell One-Liners
 author: asphixie
-date: 2023-03-10 20:55:00 +0800
+date: 2023-05-19 20:55:00 +0800
 categories: [Active Directory]
 pin: true
 comments: false
